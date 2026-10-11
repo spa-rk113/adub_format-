@@ -1,0 +1,213 @@
+{
+  "format": "adub",
+  "format_version": "1.0.0",
+  "project": {
+    "id": "demo-anime-scene-001",
+    "title": "Fictional Anime Scene — Narrator and Overlapping Voices",
+    "duration_seconds": 16.0,
+    "source": {
+      "kind": "video",
+      "uri": "source-video.mp4",
+      "asset_path": null,
+      "media_available": false,
+      "frame_rate": 24,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "speakers": [
+    {
+      "id": "narrator_001",
+      "label": "Narrator",
+      "speaker_type": "narrator",
+      "voice_description": "Calm, clear storytelling voice",
+      "visual_identity": null,
+      "voice_profile_id": "voice_narrator_hi",
+      "notes": "Voiceover; not a visible character."
+    },
+    {
+      "id": "character_a",
+      "label": "Character A",
+      "speaker_type": "character",
+      "voice_description": "Protective, urgent delivery",
+      "visual_identity": {
+        "description": "Fictional character visible in scene",
+        "confidence": 0.9
+      },
+      "voice_profile_id": "voice_character_a_hi",
+      "notes": null
+    },
+    {
+      "id": "unknown_voice_001",
+      "label": "Unknown voice 1",
+      "speaker_type": "unknown",
+      "voice_description": null,
+      "visual_identity": null,
+      "voice_profile_id": null,
+      "notes": "Do not assign to a visible character without more evidence."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 12.0,
+      "end": 16.0,
+      "description": "A tense battle scene; Character A is visible in the foreground while other activity continues behind them.",
+      "visible_speaker_ids": [
+        "character_a"
+      ],
+      "visual_observations": [
+        {
+          "kind": "action",
+          "description": "Character A turns toward danger",
+          "confidence": 0.78
+        },
+        {
+          "kind": "mouth_movement",
+          "speaker_id": "character_a",
+          "description": "Possible speaking motion",
+          "confidence": 0.72
+        }
+      ],
+      "confidence": 0.8
+    }
+  ],
+  "events": [
+    {
+      "id": "event_narration_001",
+      "start": 12.0,
+      "end": 14.0,
+      "event_type": "speech",
+      "speech_kind": "narration",
+      "speaker_id": "narrator_001",
+      "screen_presence": "voiceover",
+      "source_text": "The battle had only begun.",
+      "language": "en",
+      "translation": {
+        "text": "लड़ाई तो अभी शुरू हुई थी।",
+        "language": "hi",
+        "adaptation_notes": "Narrative, measured delivery."
+      },
+      "acting": {
+        "emotion": "serious",
+        "delivery": "narration",
+        "intensity": 0.45,
+        "direction": "Speak clearly, with restrained tension.",
+        "review_required": false
+      },
+      "confidence": {
+        "transcription": 0.97,
+        "speaker": 0.96,
+        "speech_kind": 0.94,
+        "screen_link": 0.99
+      },
+      "overlap_group": "overlap_001",
+      "source_audio": null,
+      "dub_audio": null,
+      "word_timings": [],
+      "track_id": "track_narration",
+      "review_status": "confirmed",
+      "notes": null
+    },
+    {
+      "id": "event_dialogue_001",
+      "start": 12.8,
+      "end": 14.1,
+      "event_type": "speech",
+      "speech_kind": "dialogue",
+      "speaker_id": "character_a",
+      "screen_presence": "on_screen",
+      "source_text": "Stay behind me!",
+      "language": "en",
+      "translation": {
+        "text": "मेरे पीछे रहो!",
+        "language": "hi",
+        "adaptation_notes": "Short, urgent line to fit the original timing."
+      },
+      "acting": {
+        "emotion": "protective",
+        "delivery": "shout",
+        "intensity": 0.9,
+        "direction": "Urgent but intelligible; do not over-compress the words.",
+        "review_required": false
+      },
+      "confidence": {
+        "transcription": 0.96,
+        "speaker": 0.89,
+        "speech_kind": 0.98,
+        "screen_link": 0.8
+      },
+      "overlap_group": "overlap_001",
+      "source_audio": null,
+      "dub_audio": null,
+      "word_timings": [],
+      "track_id": "track_character_a",
+      "review_status": "needs_review",
+      "notes": "Overlaps narrator; both events must remain concurrent."
+    },
+    {
+      "id": "event_background_001",
+      "start": 13.4,
+      "end": 14.0,
+      "event_type": "speech",
+      "speech_kind": "background_dialogue",
+      "speaker_id": "unknown_voice_001",
+      "screen_presence": "off_screen",
+      "source_text": "Look out!",
+      "language": "en",
+      "translation": {
+        "text": "सावधान!",
+        "language": "hi",
+        "adaptation_notes": "Brief warning; keep lower in mix than foreground dialogue unless context indicates otherwise."
+      },
+      "acting": {
+        "emotion": "alarm",
+        "delivery": "shout",
+        "intensity": 0.75,
+        "direction": "Short warning from the background.",
+        "review_required": true
+      },
+      "confidence": {
+        "transcription": 0.83,
+        "speaker": 0.31,
+        "speech_kind": 0.88,
+        "screen_link": 0.2
+      },
+      "overlap_group": "overlap_001",
+      "source_audio": null,
+      "dub_audio": null,
+      "word_timings": [],
+      "track_id": "track_background",
+      "review_status": "needs_review",
+      "notes": "Identity is unknown; do not merge with Character A."
+    }
+  ],
+  "tracks": [
+    {
+      "id": "track_narration",
+      "label": "Narration",
+      "kind": "narration",
+      "speaker_id": "narrator_001",
+      "gain_db": 0.0,
+      "muted": false
+    },
+    {
+      "id": "track_character_a",
+      "label": "Character A",
+      "kind": "dialogue",
+      "speaker_id": "character_a",
+      "gain_db": 0.0,
+      "muted": false
+    },
+    {
+      "id": "track_background",
+      "label": "Background voices",
+      "kind": "dialogue",
+      "speaker_id": "unknown_voice_001",
+      "gain_db": -4.0,
+      "muted": false
+    }
+  ],
+  "assets": [],
+  "extensions": {}
+}
