@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/adub/schema/adub-v1.schema.json",
+  "$id": "https://github.com/spa-rk113/adub_format-/blob/main/schema/adub-v1.schema.json",
   "title": "ADUB project",
   "description": "Draft schema for the public ADUB anime dubbing project format.",
   "type": "object",
